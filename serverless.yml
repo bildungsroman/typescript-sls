@@ -62,6 +62,27 @@ functions:
         Resource: '*'
     tags:
       runtimeOption: typescript
+  moreTs:
+    handler: index.handler
+    description:
+      Fn::Sub:
+        - 'Stack #{StackTagName} Environment #{EnvironmentTagName} Function #{ResourceName}'
+        - ResourceName: moreTs
+    runtime: nodejs10.x
+    tracing: Active
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - xray:PutTraceSegments
+          - xray:PutTelemetryRecords
+          - xray:GetSamplingRules
+          - xray:GetSamplingTargets
+          - xray:GetSamplingStatisticSummaries
+        Resource: '*'
+    tags:
+      runtimeOption: typescript
+    memorySize: 3008
+    timeout: 1
 resources:
   Parameters:
     StackTagName:
