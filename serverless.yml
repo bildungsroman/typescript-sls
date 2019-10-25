@@ -13,6 +13,8 @@ functions:
         - 'Stack #{StackTagName} Environment #{EnvironmentTagName} Function #{ResourceName}'
         - ResourceName: Function
     runtime: nodejs10.x
+    metadata:
+      - runtimeOption: true
     tracing: Active
     iamRoleStatements:
       - Effect: Allow
