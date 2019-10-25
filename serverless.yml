@@ -20,8 +20,6 @@ functions:
         - ResourceName: tsFunction
     runtime: nodejs10.x
     tracing: Active
-    metadata:
-      - runtimeOption: true
     iamRoleStatements:
       - Effect: Allow
         Action:
