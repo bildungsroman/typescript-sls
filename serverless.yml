@@ -5,7 +5,6 @@ provider:
 plugins:
   - serverless-iam-roles-per-function
   - serverless-cf-vars
-  - serverless-iam-roles-per-function
   - serverless-plugin-typescript
 functions:
   tsFunction:
