@@ -82,7 +82,7 @@ functions:
     tags:
       runtimeOption: typescript
     memorySize: 3008
-    timeout: 1
+    timeout: 15
 resources:
   Parameters:
     StackTagName:
