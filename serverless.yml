@@ -25,7 +25,7 @@ functions:
           - xray:GetSamplingStatisticSummaries
         Resource: '*'
     tags:
-      runtimeOption: true
+      runtimeOption: typescript
   normalFunction:
     handler: index.handler
     description:
@@ -61,7 +61,7 @@ functions:
           - xray:GetSamplingStatisticSummaries
         Resource: '*'
     tags:
-      runtimeOption: true
+      runtimeOption: typescript
 resources:
   Parameters:
     StackTagName:
