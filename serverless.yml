@@ -18,9 +18,10 @@ functions:
       Fn::Sub:
         - 'Stack #{StackTagName} Environment #{EnvironmentTagName} Function #{ResourceName}'
         - ResourceName: tsFunction
-          runtimeOption: true
     runtime: nodejs10.x
     tracing: Active
+    metadata:
+      - runtimeOption: true
     iamRoleStatements:
       - Effect: Allow
         Action:
