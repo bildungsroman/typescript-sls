@@ -11,7 +11,6 @@ functions:
       Fn::Sub:
         - 'Stack #{StackTagName} Environment #{EnvironmentTagName} Function #{ResourceName}'
         - ResourceName: tsFunction
-          runtimeOption: true
     runtime: nodejs10.x
     tracing: Active
     iamRoleStatements:
