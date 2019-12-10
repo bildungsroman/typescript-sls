@@ -69,6 +69,44 @@ functions:
           - Endpoint.Port
       DB_ARN:
         Fn::Sub: 'arn:aws:rds:#{AWS::Region}:#{AWS::AccountId}:cluster:#{Database}'
+  tsNode12:
+    handler: index.handler
+    description:
+      Fn::Sub:
+        - 'Stack #{StackTagName} Environment #{EnvironmentTagName} Function #{ResourceName}'
+        - ResourceName: tsNode12
+    runtime: nodejs12.x
+    tracing: Active
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - xray:PutTraceSegments
+          - xray:PutTelemetryRecords
+          - xray:GetSamplingRules
+          - xray:GetSamplingTargets
+          - xray:GetSamplingStatisticSummaries
+        Resource: '*'
+    tags:
+      runtimeOption: typescript
+  tsNode10:
+    handler: index.handler
+    description:
+      Fn::Sub:
+        - 'Stack #{StackTagName} Environment #{EnvironmentTagName} Function #{ResourceName}'
+        - ResourceName: tsNode10
+    runtime: nodejs10.x
+    tracing: Active
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - xray:PutTraceSegments
+          - xray:PutTelemetryRecords
+          - xray:GetSamplingRules
+          - xray:GetSamplingTargets
+          - xray:GetSamplingStatisticSummaries
+        Resource: '*'
+    tags:
+      runtimeOption: typescript
 resources:
   Parameters:
     StackTagName:
