@@ -118,8 +118,6 @@ functions:
           - xray:GetSamplingTargets
           - xray:GetSamplingStatisticSummaries
         Resource: '*'
-    tags:
-      runtimeOption: typescript
     environment:
       DB_ID:
         Ref: Database
