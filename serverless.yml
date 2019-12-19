@@ -118,8 +118,6 @@ functions:
           - xray:GetSamplingTargets
           - xray:GetSamplingStatisticSummaries
         Resource: '*'
-    tags:
-      runtimeOption: typescript
     environment:
       DB_ID:
         Ref: Database
@@ -133,6 +131,8 @@ functions:
           - Endpoint.Port
       DB_ARN:
         Fn::Sub: 'arn:aws:rds:#{AWS::Region}:#{AWS::AccountId}:cluster:#{Database}'
+    tags:
+      runtimeOption: typescript
   moreTsFun:
     handler: index.handler
     description:
