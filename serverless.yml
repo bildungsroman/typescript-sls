@@ -1,7 +1,7 @@
 service: typescript-sls
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs12.x
 plugins:
   - serverless-iam-roles-per-function
   - serverless-cf-vars
@@ -13,7 +13,7 @@ functions:
       Fn::Sub:
         - 'Stack #{StackTagName} Environment #{EnvironmentTagName} Function #{ResourceName}'
         - ResourceName: tsFunction
-    runtime: nodejs10.x
+    runtime: nodejs12.x
     tracing: Active
     iamRoleStatements:
       - Effect: Allow
@@ -45,7 +45,7 @@ functions:
       Fn::Sub:
         - 'Stack #{StackTagName} Environment #{EnvironmentTagName} Function #{ResourceName}'
         - ResourceName: normalFunction
-    runtime: nodejs10.x
+    runtime: nodejs12.x
     tracing: Active
     iamRoleStatements:
       - Effect: Allow
@@ -107,7 +107,7 @@ functions:
       Fn::Sub:
         - 'Stack #{StackTagName} Environment #{EnvironmentTagName} Function #{ResourceName}'
         - ResourceName: tsNode10
-    runtime: nodejs10.x
+    runtime: nodejs12.x
     tracing: Active
     iamRoleStatements:
       - Effect: Allow
